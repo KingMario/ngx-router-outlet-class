@@ -1,0 +1,33 @@
+{
+  "name": "ngx-router-outlet-class",
+  "version": "0.0.1",
+  "author": "KingMario <gcyyq@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KingMario/ngx-router-outlet-class/issues"
+  },
+  "homepage": "https://github.com/KingMario/ngx-router-outlet-class/projects/ngx-router-outlet-class#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KingMario/ngx-router-outlet-class.git"
+  },
+  "keywords": [
+    "angular",
+    "class",
+    "component",
+    "directive",
+    "element",
+    "host",
+    "router",
+    "router-outlet"
+  ],
+  "peerDependencies": {
+    "@angular/common": "^15.2.0",
+    "@angular/core": "^15.2.0",
+    "@angular/router": "^15.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "sideEffects": false
+}
