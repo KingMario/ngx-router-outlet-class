@@ -1,12 +1,12 @@
 {
   "name": "ngx-router-outlet-class",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "KingMario <gcyyq@hotmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/KingMario/ngx-router-outlet-class/issues"
   },
-  "homepage": "https://github.com/KingMario/ngx-router-outlet-class/projects/ngx-router-outlet-class#readme",
+  "homepage": "https://github.com/KingMario/ngx-router-outlet-class/tree/main/projects/ngx-router-outlet-class#readme",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/KingMario/ngx-router-outlet-class.git"
