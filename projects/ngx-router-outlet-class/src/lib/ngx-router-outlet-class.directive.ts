@@ -1,28 +1,27 @@
-import { Directive, Input, OnChanges, Self, SimpleChanges } from '@angular/core';
+import { Directive, Input, OnChanges, OnDestroy, Self, SimpleChanges } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+import { merge, Subscription } from 'rxjs';
 
 @Directive({
   selector: 'router-outlet[componentClass]',
 })
-export class NgxRouterOutletClassDirective implements OnChanges {
+export class NgxRouterOutletClassDirective implements OnChanges, OnDestroy {
 
   constructor(
     @Self() private routerOutlet: RouterOutlet,
   ) {
-    routerOutlet?.activateEvents.subscribe(() => {
-      this.setComponentClass();
-    });
-
-    routerOutlet?.attachEvents.subscribe(() => {
-      this.setComponentClass();
-    });
-
-    routerOutlet?.detachEvents.subscribe(() => {
-      this.setComponentClass();
+    this.subscription = merge(
+      routerOutlet?.activateEvents,
+      routerOutlet?.attachEvents,
+    ).subscribe({
+      next: () => this.setComponentClass(),
     });
   }
 
   @Input() componentClass = '';
+
+  subscription: Subscription;
 
   private setComponentClass() {
     if (this.routerOutlet.isActivated && this.componentClass) {
@@ -44,6 +43,10 @@ export class NgxRouterOutletClassDirective implements OnChanges {
 
       this.setComponentClass();
     }
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }
