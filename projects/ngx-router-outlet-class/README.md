@@ -107,8 +107,7 @@ Here's an example of how to use it:
 ```typescript
 class AppComponent {
 
-  myClassGetter(component: any,
-  ) {
+  myClassGetter(component: any) {
     return component?.isAbout
       ? 'theme-aero'
       : 'theme-violet';
